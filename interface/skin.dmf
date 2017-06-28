@@ -1,0 +1,961 @@
+macro "macro"
+	elem 
+		name = "Center+REP"
+		command = ".center"
+	elem 
+		name = "Northeast+REP"
+		command = ".northeast"
+	elem 
+		name = "Southeast+REP"
+		command = ".southeast"
+	elem 
+		name = "Southwest+REP"
+		command = ".southwest"
+	elem 
+		name = "Northwest+REP"
+		command = ".northwest"
+	elem 
+		name = "CTRL+West"
+		command = "westface"
+	elem 
+		name = "West+REP"
+		command = ".west"
+	elem 
+		name = "CTRL+North"
+		command = "northface"
+	elem 
+		name = "North+REP"
+		command = ".north"
+	elem 
+		name = "CTRL+East"
+		command = "eastface"
+	elem 
+		name = "East+REP"
+		command = ".east"
+	elem 
+		name = "CTRL+South"
+		command = "southface"
+	elem 
+		name = "South+REP"
+		command = ".south"
+	elem 
+		name = "F1"
+		command = "adminhelp"
+	elem 
+		name = "CTRL+SHIFT+F1+REP"
+		command = ".options"
+	elem 
+		name = "F2"
+		command = "OOC"
+	elem 
+		name = "F2+REP"
+		command = ".screenshot auto"
+	elem 
+		name = "SHIFT+F2+REP"
+		command = ".screenshot"
+	elem 
+		name = "F3"
+		command = "Say"
+	elem 
+		name = "F4"
+		command = "Me"
+
+macro "vending"
+	elem 
+		name = "NORTHEAST"
+		command = "skincmd \"vending;pagen\""
+	elem 
+		name = "SOUTHEAST"
+		command = "skincmd \"vending;pagep\""
+	elem 
+		name = "1"
+		command = "skincmd \"vending;buy0\""
+	elem 
+		name = "2"
+		command = "skincmd \"vending;buy1\""
+	elem 
+		name = "3"
+		command = "skincmd \"vending;buy2\""
+	elem 
+		name = "4"
+		command = "skincmd \"vending;buy3\""
+	elem 
+		name = "5"
+		command = "skincmd \"vending;buy4\""
+	elem 
+		name = "6"
+		command = "skincmd \"vending;buy5\""
+
+
+menu "menu"
+	elem 
+		name = "&File"
+		command = ""
+		saved-params = "is-checked"
+	elem 
+		name = "&Quick screenshot\tF2"
+		command = ".screenshot auto"
+		category = "&File"
+		saved-params = "is-checked"
+	elem 
+		name = "&Save screenshot as...\tShift+F2"
+		command = ".screenshot"
+		category = "&File"
+		saved-params = "is-checked"
+	elem 
+		name = ""
+		command = ""
+		category = "&File"
+		saved-params = "is-checked"
+	elem 
+		name = "&Quit"
+		command = ".quit"
+		category = "&File"
+		saved-params = "is-checked"
+	elem 
+		name = "&Icons"
+		command = ""
+		saved-params = "is-checked"
+	elem "stretch"
+		name = "&Stretch to fit"
+		command = ".winset \"mapwindow.map.icon-size=0\""
+		category = "&Icons"
+		is-checked = true
+		can-check = true
+		group = "size"
+		saved-params = "is-checked"
+	elem "icon64"
+		name = "&64x64 (2x)"
+		command = ".winset \"mapwindow.map.icon-size=64\""
+		category = "&Icons"
+		can-check = true
+		group = "size"
+		saved-params = "is-checked"
+	elem "icon32"
+		name = "&32x32"
+		command = ".winset \"mapwindow.map.icon-size=32\""
+		category = "&Icons"
+		can-check = true
+		group = "size"
+		saved-params = "is-checked"
+	elem 
+		name = ""
+		command = ""
+		category = "&Icons"
+		saved-params = "is-checked"
+	elem "textmode"
+		name = "&Text"
+		command = ".winset \"menu.textmode.is-checked=true?mapwindow.map.text-mode=true:mapwindow.map.text-mode=false\""
+		category = "&Icons"
+		can-check = true
+		saved-params = "is-checked"
+	elem 
+		name = "&Help"
+		command = ""
+		saved-params = "is-checked"
+	elem 
+		name = "&Admin help\tF1"
+		command = "adminhelp"
+		category = "&Help"
+		saved-params = "is-checked"
+
+
+window "chemdispenser"
+	elem "chemdispenser"
+		type = MAIN
+		pos = 281,0
+		size = 340x480
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Chem Dispenser"
+		statusbar = false
+	elem "energy"
+		type = LABEL
+		pos = 8,24
+		size = 56x16
+		anchor1 = none
+		anchor2 = none
+		saved-params = ""
+		text = "Energy: 25"
+	elem "eject"
+		type = BUTTON
+		pos = 264,4
+		size = 72x20
+		anchor1 = none
+		anchor2 = none
+		saved-params = "is-checked"
+		text = "[Insert beaker]"
+		command = "skincmd \"chemdispenser;eject\""
+	elem "amountc"
+		type = BUTTON
+		pos = 208,4
+		size = 48x20
+		anchor1 = none
+		anchor2 = none
+		saved-params = "is-checked"
+		text = "[Other]"
+		command = "skincmd \"chemdispenser;amountc\""
+	elem "amount3"
+		type = BUTTON
+		pos = 176,4
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		saved-params = "is-checked"
+		text = "[30]"
+		command = "skincmd \"chemdispenser;amount30\""
+	elem "amount2"
+		type = BUTTON
+		pos = 144,4
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		saved-params = "is-checked"
+		text = "[20]"
+		command = "skincmd \"chemdispenser;amount20\""
+	elem "amount1"
+		type = BUTTON
+		pos = 112,4
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		saved-params = "is-checked"
+		text = "[10]"
+		command = "skincmd \"chemdispenser;amount10\""
+	elem "amount"
+		type = LABEL
+		pos = 4,4
+		size = 100x20
+		anchor1 = none
+		anchor2 = none
+		font-size = 12
+		saved-params = ""
+		text = "Amount: 30"
+	elem "child1"
+		type = CHILD
+		pos = 0,40
+		size = 340x440
+		anchor1 = none
+		anchor2 = none
+		saved-params = "splitter"
+		left = "chemdispenser_reagents"
+		is-vert = false
+
+window "chemdispenser_reagents"
+	elem "chemdispenser_reagents"
+		type = MAIN
+		pos = 281,0
+		size = 340x448
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+		can-scroll = vertical
+	elem "template_dispense"
+		type = BUTTON
+		pos = 256,8
+		size = 64x32
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		saved-params = "is-checked"
+		text = "Dispense"
+		image = 'icons\\dispensebutton_bg.png'
+		command = ""
+		is-flat = true
+	elem "template_name"
+		type = LABEL
+		pos = 18,8
+		size = 230x32
+		anchor1 = none
+		anchor2 = none
+		font-size = 15
+		is-visible = false
+		saved-params = ""
+		text = "Chloral Hydrate"
+		image = 'icons\\reagentname_bg.png'
+		image-mode = stretch
+
+window "mainwindow"
+	elem "mainwindow"
+		type = MAIN
+		pos = 281,0
+		size = 640x440
+		anchor1 = none
+		anchor2 = none
+		is-default = true
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Space Station 13"
+		is-maximized = true
+		icon = 'icons\\ss13_64.png'
+		macro = "macro"
+		menu = "menu"
+	elem "mainvsplit"
+		type = CHILD
+		pos = 3,0
+		size = 634x416
+		anchor1 = 0,0
+		anchor2 = 100,100
+		saved-params = "splitter"
+		right = "rpane"
+		is-vert = true
+	elem "input"
+		type = INPUT
+		pos = 3,420
+		size = 517x20
+		anchor1 = 0,100
+		anchor2 = 100,100
+		background-color = #d3b5b5
+		is-default = true
+		border = sunken
+		saved-params = "command"
+	elem "saybutton"
+		type = BUTTON
+		pos = 520,420
+		size = 40x20
+		anchor1 = 100,100
+		anchor2 = none
+		saved-params = "is-checked"
+		text = "Chat"
+		command = ".winset \"saybutton.is-checked=true?input.command=\"!say \\\"\" macrobutton.is-checked=false:input.command=\""
+		button-type = pushbox
+	elem "macrobutton"
+		type = BUTTON
+		pos = 560,420
+		size = 30x20
+		anchor1 = 100,100
+		anchor2 = none
+		is-disabled = true
+		saved-params = "is-checked"
+		text = "Alt"
+		command = ".winset \"macrobutton.is-checked=true?input.command=\"!.alt \" saybutton.is-checked=false:input.command=\""
+		button-type = pushbox
+	elem "hostb"
+		type = BUTTON
+		pos = 590,420
+		size = 47x20
+		anchor1 = 100,100
+		anchor2 = none
+		is-disabled = true
+		saved-params = "is-checked"
+		text = "Host..."
+		command = ".host"
+
+window "mapwindow"
+	elem "mapwindow"
+		type = MAIN
+		pos = 281,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "map"
+		type = MAP
+		pos = 0,0
+		size = 640x480
+		anchor1 = 0,0
+		anchor2 = 100,100
+		text-color = #000000
+		is-default = true
+		saved-params = "icon-size"
+		on-show = ".winset\"mainwindow.mainvsplit.left=mapwindow\""
+		on-hide = ".winset\"mainwindow.mainvsplit.left=\""
+
+window "outputwindow"
+	elem "outputwindow"
+		type = MAIN
+		pos = 281,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "output"
+		type = OUTPUT
+		pos = 0,0
+		size = 640x480
+		anchor1 = 0,0
+		anchor2 = 100,100
+		is-default = true
+		saved-params = "max-lines"
+		style = ".system {color:#ff0000;}"
+
+window "rpane"
+	elem "rpane"
+		type = MAIN
+		pos = 281,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		is-pane = true
+	elem "rpanewindow"
+		type = CHILD
+		pos = 0,0
+		size = 640x499
+		anchor1 = 0,0
+		anchor2 = 100,100
+		saved-params = "splitter"
+		right = "outputwindow"
+		is-vert = false
+	elem "textb"
+		type = BUTTON
+		pos = 0,0
+		size = 60x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		saved-params = "is-checked"
+		text = "Text"
+		command = ".winset \"rpanewindow.left=;\""
+		is-checked = true
+		group = "rpanemode"
+		button-type = pushbox
+	elem "browseb"
+		type = BUTTON
+		pos = 65,0
+		size = 60x20
+		anchor1 = none
+		anchor2 = none
+		saved-params = "is-checked"
+		text = "Browser"
+		command = ".winset \"rpanewindow.left=browserwindow\""
+		group = "rpanemode"
+		button-type = pushbox
+	elem "infob"
+		type = BUTTON
+		pos = 130,0
+		size = 60x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		saved-params = "is-checked"
+		text = "Info"
+		command = ".winset \"rpanewindow.left=infowindow\""
+		group = "rpanemode"
+		button-type = pushbox
+
+window "browserwindow"
+	elem "browserwindow"
+		type = MAIN
+		pos = 281,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Browser"
+		is-pane = true
+	elem "browser"
+		type = BROWSER
+		pos = 0,0
+		size = 640x499
+		anchor1 = 0,0
+		anchor2 = 100,100
+		background-color = #ffffff
+		is-default = true
+		saved-params = ""
+		on-show = ".winset\"rpane.infob.is-visible=true?rpane.infob.pos=130,0;rpane.textb.is-visible=true;rpane.browseb.is-visible=true;rpane.browseb.is-checked=true;rpane.rpanewindow.pos=0,30;rpane.rpanewindow.size=0x0;rpane.rpanewindow.left=browserwindow\""
+		on-hide = ".winset\"rpane.infob.is-visible=true?rpane.infob.is-checked=true rpane.infob.pos=65,0 rpane.rpanewindow.left=infowindow:rpane.rpanewindow.left=textwindow rpane.textb.is-visible=true rpane.rpanewindow.pos=0,30 rpane.rpanewindow.size=0x0\""
+
+window "infowindow"
+	elem "infowindow"
+		type = MAIN
+		pos = 281,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Info"
+		is-pane = true
+	elem "info"
+		type = INFO
+		pos = 0,0
+		size = 638x475
+		anchor1 = 0,0
+		anchor2 = 100,100
+		is-default = true
+		saved-params = ""
+		highlight-color = #00aa00
+		allow-html = false
+		on-show = ".winset\"rpane.infob.is-visible=true;rpane.browseb.is-visible=true?rpane.infob.pos=130,0:rpane.infob.pos=65,0 rpane.textb.is-visible=true rpane.infob.is-checked=true rpane.rpanewindow.pos=0,30 rpane.rpanewindow.size=0x0 rpane.rpanewindow.left=infowindow\""
+		on-hide = ".winset\"rpane.infob.is-visible=false;rpane.browseb.is-visible=true?rpane.browseb.is-checked=true rpane.rpanewindow.left=browserwindow:rpane.textb.is-visible=true rpane.rpanewindow.pos=0,30 rpane.rpanewindow.size=0x0 rpane.rpanewindow.left=\""
+
+window "vendingslot"
+	elem "vendingslot"
+		type = MAIN
+		pos = 281,0
+		size = 285x60
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "buy"
+		type = BUTTON
+		pos = 240,16
+		size = 32x32
+		anchor1 = 80,7
+		anchor2 = 98,93
+		font-family = "Arial"
+		font-size = 15
+		text-color = #ffff80
+		background-color = #9193ae
+		saved-params = "is-checked"
+		text = "$"
+		command = ""
+	elem "stock"
+		type = LABEL
+		pos = 8,40
+		size = 216x16
+		anchor1 = 3,67
+		anchor2 = 79,93
+		is-transparent = true
+		saved-params = ""
+		text = "Left in stock: 0"
+	elem "name"
+		type = LABEL
+		pos = 0,4
+		size = 224x28
+		anchor1 = 0,7
+		anchor2 = 79,53
+		font-size = 11
+		font-style = "bold"
+		is-transparent = true
+		saved-params = ""
+		text = "Cuban Pete's Double Bearded Wine LOL LINES"
+		text-wrap = true
+
+window "vendingwindow_n"
+	elem "vendingwindow_n"
+		type = MAIN
+		pos = 281,0
+		size = 300x438
+		anchor1 = none
+		anchor2 = none
+		background-color = #ffffff
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Vending Machine"
+		statusbar = false
+		can-minimize = false
+		can-resize = false
+		image = 'icons\\VendingMachineBG.png'
+		macro = "vending"
+	elem "page"
+		type = LABEL
+		pos = 64,416
+		size = 36x16
+		anchor1 = none
+		anchor2 = none
+		background-color = #c7dbe0
+		is-transparent = true
+		saved-params = ""
+		text = "1/1"
+	elem "forwardbutton"
+		type = BUTTON
+		pos = 96,416
+		size = 16x16
+		anchor1 = none
+		anchor2 = none
+		background-color = #c7dbe0
+		saved-params = "is-checked"
+		text = ">"
+		command = "skincmd \"vending;pagen\""
+	elem "backbutton"
+		type = BUTTON
+		pos = 48,416
+		size = 16x16
+		anchor1 = none
+		anchor2 = none
+		background-color = #ccdfe3
+		saved-params = "is-checked"
+		text = "<"
+		command = "skincmd \"vending;pagep\""
+	elem "label1"
+		type = LABEL
+		pos = 8,416
+		size = 40x16
+		anchor1 = none
+		anchor2 = none
+		is-transparent = true
+		saved-params = ""
+		text = "Page: "
+	elem "product15"
+		type = BUTTON
+		pos = 8,392
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #526f7c
+		is-visible = false
+		is-disabled = true
+		saved-params = "is-checked"
+		text = "2Beard Whine (out of stock)"
+		command = "buy15"
+	elem "stock15"
+		type = LABEL
+		pos = 264,392
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+	elem "stock14"
+		type = LABEL
+		pos = 264,368
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+	elem "stock13"
+		type = LABEL
+		pos = 264,344
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+	elem "product14"
+		type = BUTTON
+		pos = 8,368
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #ad92dc
+		is-visible = false
+		saved-params = "is-checked"
+		text = "Vanilla SuperAggroCrag Tears (Keyboard Selected)"
+		command = "buy14"
+	elem "product13"
+		type = BUTTON
+		pos = 8,344
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #8ba5b4
+		is-visible = false
+		saved-params = "is-checked"
+		text = "MOTHERFUCKER"
+		command = "buy13"
+	elem "stock12"
+		type = LABEL
+		pos = 264,320
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+	elem "title"
+		type = LABEL
+		pos = 0,0
+		size = 291x50
+		anchor1 = 2,0
+		anchor2 = 99,12
+		font-size = 12
+		font-style = "bold"
+		is-transparent = true
+		saved-params = ""
+		text = "Crazy Dave's vending machine"
+	elem "coinbutton"
+		type = BUTTON
+		pos = 280,0
+		size = 20x24
+		anchor1 = none
+		anchor2 = none
+		font-family = "monospace"
+		font-size = 15
+		font-style = "bold"
+		text-color = #ffff3e
+		background-color = #c0c0c0
+		is-visible = false
+		border = line
+		saved-params = "is-checked"
+		text = "$"
+		command = "skincmd \"vending;coin\""
+		is-flat = true
+	elem "stock11"
+		type = LABEL
+		pos = 264,296
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+	elem "advert"
+		type = LABEL
+		pos = 120,420
+		size = 176x16
+		anchor1 = none
+		anchor2 = none
+		font-family = "serif"
+		font-size = 7
+		is-transparent = true
+		saved-params = ""
+		text = "\" Alcohol is humanity's best friend \""
+	elem "stock10"
+		type = LABEL
+		pos = 264,272
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+	elem "stock9"
+		type = LABEL
+		pos = 264,248
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+	elem "stock8"
+		type = LABEL
+		pos = 264,224
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+	elem "stock7"
+		type = LABEL
+		pos = 264,200
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+	elem "stock6"
+		type = LABEL
+		pos = 264,176
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+	elem "stock5"
+		type = LABEL
+		pos = 264,152
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+	elem "stock4"
+		type = LABEL
+		pos = 264,128
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+	elem "stock3"
+		type = LABEL
+		pos = 264,104
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+	elem "product12"
+		type = BUTTON
+		pos = 8,320
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #78a6c7
+		is-visible = false
+		saved-params = "is-checked"
+		text = "Soylent Green"
+		command = "buy12"
+	elem "product11"
+		type = BUTTON
+		pos = 8,296
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #8ba5b4
+		is-visible = false
+		saved-params = "is-checked"
+		text = "Blue Waffles"
+		command = "buy11"
+	elem "product10"
+		type = BUTTON
+		pos = 8,272
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #78a6c7
+		is-visible = false
+		saved-params = "is-checked"
+		text = "Metroid chips"
+		command = "buy10"
+	elem "product9"
+		type = BUTTON
+		pos = 8,248
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #8ba5b4
+		is-visible = false
+		saved-params = "is-checked"
+		text = "Chocolate Xenodildos"
+		command = "buy9"
+	elem "product8"
+		type = BUTTON
+		pos = 8,224
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #78a6c7
+		is-visible = false
+		saved-params = "is-checked"
+		text = "Chips"
+		command = "buy8"
+	elem "product7"
+		type = BUTTON
+		pos = 8,200
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #8ba5b4
+		is-visible = false
+		saved-params = "is-checked"
+		text = "THAT FAGGOT TRAITOR GEORGE melons"
+		command = "buy7"
+	elem "product6"
+		type = BUTTON
+		pos = 8,176
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #78a6c7
+		is-visible = false
+		saved-params = "is-checked"
+		text = "Peanis Cupcakes"
+		command = "buy6"
+	elem "product5"
+		type = BUTTON
+		pos = 8,152
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #8ba5b4
+		is-visible = false
+		saved-params = "is-checked"
+		text = "Doublebeard Bearded Special Wine"
+		command = "buy5"
+	elem "product4"
+		type = BUTTON
+		pos = 8,128
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #78a6c7
+		is-visible = false
+		saved-params = "is-checked"
+		text = "Caccavo Guaranteed Quality Tequilla"
+		command = "buy4"
+	elem "product3"
+		type = BUTTON
+		pos = 8,104
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #8ba5b4
+		is-visible = false
+		saved-params = "is-checked"
+		text = "TUNGSTEN TRIPLE GRIFFED"
+		command = "buy3"
+	elem "product2"
+		type = BUTTON
+		pos = 8,80
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #78a6c7
+		is-visible = false
+		saved-params = "is-checked"
+		text = "4 No Raisins!"
+		command = "buy2"
+	elem "stock2"
+		type = LABEL
+		pos = 264,80
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+	elem "product1"
+		type = BUTTON
+		pos = 8,56
+		size = 256x20
+		anchor1 = none
+		anchor2 = none
+		background-color = #8ba5b4
+		is-visible = false
+		saved-params = "is-checked"
+		text = "Griffer's Delight"
+		command = "buy1"
+	elem "stock1"
+		type = LABEL
+		pos = 264,56
+		size = 24x20
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		is-transparent = true
+		saved-params = ""
+		text = "10"
+

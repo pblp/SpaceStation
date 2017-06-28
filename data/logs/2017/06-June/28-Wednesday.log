@@ -1,0 +1,35 @@
+
+
+Starting up. 13:49.23
+---------------------
+Dear Diary....
+
+
+[13:49:23]ADMIN: Loading jobban_rank
+[13:49:23]ADMIN: jobban_keylist was empty
+[13:49:23]ADMIN: Updating jobbanfile!
+[13:49:23]ADMIN: Loading Banlist
+[13:50:37]ADMIN: Difilex has started the game.
+[13:50:37]ACCESS: Logout: *no client*/(Difilex)
+[13:50:37]ACCESS: Login: Difilex/(Colton Cobb) from 127.0.0.1
+[13:51:11]SAY: John Cobb/ : Что же делать, мамочки...
+[13:55:57]GAME: SQL ERROR during player polling. Failed to connect.
+[13:57:01]GAME: SQL ERROR during admin polling. Failed to connect.
+[13:59:36]SAY: John Cobb/ : Ой-ой...
+[13:59:42]SAY: John Cobb/ : Что же делать, мамочки...
+[14:01:47]ACCESS: Logout: Difilex/(Colton Cobb)
+
+
+Starting up. 14:48.37
+---------------------
+Dear Diary....
+
+
+[14:48:37]ADMIN: Loading jobban_rank
+[14:48:37]ADMIN: jobban_keylist was empty
+[14:48:37]ADMIN: Updating jobbanfile!
+[14:48:37]ADMIN: Loading Banlist
+[14:49:10]ADMIN: Difilex has started the game.
+[14:49:11]ACCESS: Logout: *no client*/(Difilex)
+[14:49:11]ACCESS: Login: Difilex/(Colton Cobb) from 127.0.0.1
+[14:49:56]ACCESS: Logout: Difilex/(Colton Cobb)
